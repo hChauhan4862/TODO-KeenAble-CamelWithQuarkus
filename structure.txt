@@ -1,0 +1,341 @@
+.
+├── README.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── docker
+│   │   │   ├── Dockerfile.jvm
+│   │   │   ├── Dockerfile.legacy-jar
+│   │   │   ├── Dockerfile.native
+│   │   │   └── Dockerfile.native-micro
+│   │   ├── java
+│   │   │   └── org
+│   │   │       └── acme
+│   │   │           ├── GreetingResource.java
+│   │   │           └── MyEntity.java
+│   │   ├── openapi
+│   │   │   └── openapi.yml
+│   │   └── resources
+│   │       ├── application.properties
+│   │       └── import.sql
+│   └── test
+│       └── java
+│           └── org
+│               └── acme
+│                   ├── GreetingResourceIT.java
+│                   └── GreetingResourceTest.java
+├── structure.txt
+└── target
+    ├── build-metrics.json
+    ├── classes
+    │   ├── application.properties
+    │   ├── import.sql
+    │   └── org
+    │       ├── acme
+    │       │   ├── GreetingResource.class
+    │       │   └── MyEntity.class
+    │       └── openapi
+    │           └── quarkus
+    │               └── openapi_yml
+    │                   ├── api
+    │                   │   └── DefaultApi.class
+    │                   └── model
+    │                       ├── QuarkusOpenApiGeneratorFruit$QuarkusOpenApiGeneratorFruitQueryParam.class
+    │                       └── QuarkusOpenApiGeneratorFruit.class
+    ├── code-with-quarkus-1.0.0-SNAPSHOT.jar
+    ├── generated-sources
+    │   ├── annotations
+    │   ├── open-api-json
+    │   ├── open-api-stream
+    │   ├── open-api-yaml
+    │   └── open-api-yml
+    │       └── org
+    │           └── openapi
+    │               └── quarkus
+    │                   └── openapi_yml
+    │                       ├── api
+    │                       │   └── DefaultApi.java
+    │                       └── model
+    │                           └── QuarkusOpenApiGeneratorFruit.java
+    ├── generated-test-sources
+    │   ├── open-api-json
+    │   ├── open-api-stream
+    │   ├── open-api-yaml
+    │   ├── open-api-yml
+    │   └── test-annotations
+    ├── maven-archiver
+    │   └── pom.properties
+    ├── maven-status
+    │   └── maven-compiler-plugin
+    │       ├── compile
+    │       │   ├── default-compile
+    │       │   │   ├── createdFiles.lst
+    │       │   │   └── inputFiles.lst
+    │       │   └── null
+    │       │       ├── createdFiles.lst
+    │       │       └── inputFiles.lst
+    │       └── testCompile
+    │           ├── default-testCompile
+    │           │   ├── createdFiles.lst
+    │           │   └── inputFiles.lst
+    │           └── null
+    │               ├── createdFiles.lst
+    │               └── inputFiles.lst
+    ├── quarkus
+    │   └── bootstrap
+    │       └── test-app-model.dat
+    ├── quarkus-app
+    │   ├── app
+    │   │   └── code-with-quarkus-1.0.0-SNAPSHOT.jar
+    │   ├── lib
+    │   │   ├── boot
+    │   │   │   ├── io.github.crac.org-crac-0.1.3.jar
+    │   │   │   ├── io.quarkus.quarkus-bootstrap-runner-3.15.1.jar
+    │   │   │   ├── io.quarkus.quarkus-classloader-commons-3.15.1.jar
+    │   │   │   ├── io.quarkus.quarkus-development-mode-spi-3.15.1.jar
+    │   │   │   ├── io.quarkus.quarkus-vertx-latebound-mdc-provider-3.15.1.jar
+    │   │   │   ├── io.smallrye.common.smallrye-common-constraint-2.6.0.jar
+    │   │   │   ├── io.smallrye.common.smallrye-common-cpu-2.6.0.jar
+    │   │   │   ├── io.smallrye.common.smallrye-common-expression-2.6.0.jar
+    │   │   │   ├── io.smallrye.common.smallrye-common-function-2.6.0.jar
+    │   │   │   ├── io.smallrye.common.smallrye-common-io-2.6.0.jar
+    │   │   │   ├── io.smallrye.common.smallrye-common-net-2.6.0.jar
+    │   │   │   ├── io.smallrye.common.smallrye-common-os-2.6.0.jar
+    │   │   │   ├── io.smallrye.common.smallrye-common-ref-2.6.0.jar
+    │   │   │   ├── org.jboss.logging.jboss-logging-3.6.0.Final.jar
+    │   │   │   └── org.jboss.logmanager.jboss-logmanager-3.0.6.Final.jar
+    │   │   └── main
+    │   │       ├── com.aayushatharva.brotli4j.brotli4j-1.16.0.jar
+    │   │       ├── com.aayushatharva.brotli4j.native-osx-aarch64-1.16.0.jar
+    │   │       ├── com.aayushatharva.brotli4j.service-1.16.0.jar
+    │   │       ├── com.fasterxml.classmate-1.7.0.jar
+    │   │       ├── com.fasterxml.jackson.core.jackson-annotations-2.17.2.jar
+    │   │       ├── com.fasterxml.jackson.core.jackson-core-2.17.2.jar
+    │   │       ├── com.fasterxml.jackson.core.jackson-databind-2.17.2.jar
+    │   │       ├── com.fasterxml.jackson.dataformat.jackson-dataformat-yaml-2.17.2.jar
+    │   │       ├── com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.17.2.jar
+    │   │       ├── com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.17.2.jar
+    │   │       ├── com.fasterxml.jackson.module.jackson-module-parameter-names-2.17.2.jar
+    │   │       ├── com.github.ben-manes.caffeine.caffeine-3.1.5.jar
+    │   │       ├── com.github.luben.zstd-jni-1.5.6-3.jar
+    │   │       ├── com.github.waffle.waffle-jna-3.3.0.jar
+    │   │       ├── com.google.errorprone.error_prone_annotations-2.30.0.jar
+    │   │       ├── com.mysql.mysql-connector-j-8.3.0.jar
+    │   │       ├── com.sun.istack.istack-commons-runtime-4.1.2.jar
+    │   │       ├── com.zendesk.mysql-binlog-connector-java-0.29.2.jar
+    │   │       ├── io.agroal.agroal-api-2.5.jar
+    │   │       ├── io.agroal.agroal-narayana-2.5.jar
+    │   │       ├── io.agroal.agroal-pool-2.5.jar
+    │   │       ├── io.debezium.debezium-api-2.7.2.Final.jar
+    │   │       ├── io.debezium.debezium-connector-binlog-2.7.1.Final.jar
+    │   │       ├── io.debezium.debezium-connector-mysql-2.7.1.Final.jar
+    │   │       ├── io.debezium.debezium-core-2.7.2.Final.jar
+    │   │       ├── io.debezium.debezium-ddl-parser-2.7.1.Final.jar
+    │   │       ├── io.debezium.debezium-embedded-2.7.2.Final.jar
+    │   │       ├── io.debezium.debezium-storage-file-2.7.1.Final.jar
+    │   │       ├── io.debezium.debezium-storage-kafka-2.7.1.Final.jar
+    │   │       ├── io.netty.netty-buffer-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-codec-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-codec-dns-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-codec-haproxy-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-codec-http-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-codec-http2-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-codec-socks-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-common-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-handler-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-handler-proxy-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-resolver-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-resolver-dns-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-transport-4.1.111.Final.jar
+    │   │       ├── io.netty.netty-transport-native-unix-common-4.1.111.Final.jar
+    │   │       ├── io.quarkiverse.openapi.generator.quarkus-openapi-generator-2.4.7.jar
+    │   │       ├── io.quarkus.arc.arc-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-agroal-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-arc-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-caffeine-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-core-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-credentials-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-datasource-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-datasource-common-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-fs-util-0.0.10.jar
+    │   │       ├── io.quarkus.quarkus-hibernate-orm-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-hibernate-orm-panache-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-hibernate-orm-panache-common-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-jackson-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-jdbc-mysql-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-jsonp-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-mutiny-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-narayana-jta-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-netty-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-panache-common-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-panache-hibernate-common-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-qute-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-reactive-datasource-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-reactive-mysql-client-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-rest-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-rest-client-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-rest-client-config-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-rest-client-jackson-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-rest-client-jaxrs-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-rest-common-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-rest-jackson-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-rest-jackson-common-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-security-runtime-spi-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-smallrye-context-propagation-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-smallrye-openapi-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-smallrye-stork-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-swagger-ui-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-tls-registry-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-transaction-annotations-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-vertx-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-vertx-http-3.15.1.jar
+    │   │       ├── io.quarkus.quarkus-virtual-threads-3.15.1.jar
+    │   │       ├── io.quarkus.qute.qute-core-3.15.1.jar
+    │   │       ├── io.quarkus.resteasy.reactive.resteasy-reactive-3.15.1.jar
+    │   │       ├── io.quarkus.resteasy.reactive.resteasy-reactive-client-3.15.1.jar
+    │   │       ├── io.quarkus.resteasy.reactive.resteasy-reactive-common-3.15.1.jar
+    │   │       ├── io.quarkus.resteasy.reactive.resteasy-reactive-common-types-3.15.1.jar
+    │   │       ├── io.quarkus.resteasy.reactive.resteasy-reactive-jackson-3.15.1.jar
+    │   │       ├── io.quarkus.resteasy.reactive.resteasy-reactive-vertx-3.15.1.jar
+    │   │       ├── io.quarkus.security.quarkus-security-2.1.0.jar
+    │   │       ├── io.quarkus.vertx.utils.quarkus-vertx-utils-3.15.1.jar
+    │   │       ├── io.smallrye.common.smallrye-common-annotation-2.6.0.jar
+    │   │       ├── io.smallrye.common.smallrye-common-classloader-2.6.0.jar
+    │   │       ├── io.smallrye.common.smallrye-common-vertx-context-2.6.0.jar
+    │   │       ├── io.smallrye.config.smallrye-config-3.9.1.jar
+    │   │       ├── io.smallrye.config.smallrye-config-common-3.9.1.jar
+    │   │       ├── io.smallrye.config.smallrye-config-core-3.9.1.jar
+    │   │       ├── io.smallrye.jandex-3.2.2.jar
+    │   │       ├── io.smallrye.reactive.mutiny-2.6.2.jar
+    │   │       ├── io.smallrye.reactive.mutiny-smallrye-context-propagation-2.6.2.jar
+    │   │       ├── io.smallrye.reactive.mutiny-zero-flow-adapters-1.1.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-mutiny-vertx-auth-common-3.15.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-mutiny-vertx-bridge-common-3.15.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-mutiny-vertx-core-3.15.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-mutiny-vertx-mysql-client-3.15.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-mutiny-vertx-runtime-3.15.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-mutiny-vertx-sql-client-3.15.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-mutiny-vertx-uri-template-3.15.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-mutiny-vertx-web-3.15.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-mutiny-vertx-web-common-3.15.0.jar
+    │   │       ├── io.smallrye.reactive.smallrye-reactive-converter-api-3.0.1.jar
+    │   │       ├── io.smallrye.reactive.smallrye-reactive-converter-mutiny-3.0.1.jar
+    │   │       ├── io.smallrye.reactive.vertx-mutiny-generator-3.15.0.jar
+    │   │       ├── io.smallrye.smallrye-context-propagation-2.1.2.jar
+    │   │       ├── io.smallrye.smallrye-context-propagation-api-2.1.2.jar
+    │   │       ├── io.smallrye.smallrye-context-propagation-jta-2.1.2.jar
+    │   │       ├── io.smallrye.smallrye-context-propagation-storage-2.1.2.jar
+    │   │       ├── io.smallrye.smallrye-fault-tolerance-vertx-6.4.0.jar
+    │   │       ├── io.smallrye.smallrye-open-api-core-3.10.0.jar
+    │   │       ├── io.smallrye.stork.stork-api-2.6.1.jar
+    │   │       ├── io.smallrye.stork.stork-core-2.6.1.jar
+    │   │       ├── io.swagger.core.v3.swagger-annotations-2.2.3.jar
+    │   │       ├── io.swagger.core.v3.swagger-core-2.2.3.jar
+    │   │       ├── io.swagger.core.v3.swagger-models-2.2.3.jar
+    │   │       ├── io.vertx.vertx-auth-common-4.5.10.jar
+    │   │       ├── io.vertx.vertx-bridge-common-4.5.10.jar
+    │   │       ├── io.vertx.vertx-codegen-4.5.10.jar
+    │   │       ├── io.vertx.vertx-core-4.5.10.jar
+    │   │       ├── io.vertx.vertx-mysql-client-4.5.10.jar
+    │   │       ├── io.vertx.vertx-sql-client-4.5.10.jar
+    │   │       ├── io.vertx.vertx-uri-template-4.5.10.jar
+    │   │       ├── io.vertx.vertx-web-4.5.10.jar
+    │   │       ├── io.vertx.vertx-web-client-4.5.10.jar
+    │   │       ├── io.vertx.vertx-web-common-4.5.10.jar
+    │   │       ├── jakarta.activation.jakarta.activation-api-2.1.3.jar
+    │   │       ├── jakarta.annotation.jakarta.annotation-api-3.0.0.jar
+    │   │       ├── jakarta.el.jakarta.el-api-5.0.1.jar
+    │   │       ├── jakarta.enterprise.jakarta.enterprise.cdi-api-4.1.0.jar
+    │   │       ├── jakarta.enterprise.jakarta.enterprise.lang-model-4.1.0.jar
+    │   │       ├── jakarta.inject.jakarta.inject-api-2.0.1.jar
+    │   │       ├── jakarta.interceptor.jakarta.interceptor-api-2.2.0.jar
+    │   │       ├── jakarta.json.jakarta.json-api-2.1.3.jar
+    │   │       ├── jakarta.persistence.jakarta.persistence-api-3.1.0.jar
+    │   │       ├── jakarta.resource.jakarta.resource-api-2.1.0.jar
+    │   │       ├── jakarta.transaction.jakarta.transaction-api-2.0.1.jar
+    │   │       ├── jakarta.validation.jakarta.validation-api-3.0.2.jar
+    │   │       ├── jakarta.ws.rs.jakarta.ws.rs-api-3.1.0.jar
+    │   │       ├── jakarta.xml.bind.jakarta.xml.bind-api-4.0.2.jar
+    │   │       ├── net.bytebuddy.byte-buddy-1.14.18.jar
+    │   │       ├── net.java.dev.jna.jna-5.8.0.jar
+    │   │       ├── net.java.dev.jna.jna-platform-5.8.0.jar
+    │   │       ├── org.antlr.antlr4-runtime-4.13.0.jar
+    │   │       ├── org.apache.camel.camel-api-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-base-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-base-engine-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-componentdsl-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-core-catalog-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-core-engine-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-core-languages-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-core-model-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-core-processor-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-core-reifier-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-debezium-common-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-debezium-mysql-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-endpointdsl-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-main-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-management-api-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-microprofile-config-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-support-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-tooling-model-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-util-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-util-json-4.8.0.jar
+    │   │       ├── org.apache.camel.camel-xml-jaxp-util-4.8.0.jar
+    │   │       ├── org.apache.camel.quarkus.camel-quarkus-core-3.15.0.jar
+    │   │       ├── org.apache.camel.quarkus.camel-quarkus-debezium-mysql-3.15.0.jar
+    │   │       ├── org.apache.camel.quarkus.camel-quarkus-support-debezium-3.15.0.jar
+    │   │       ├── org.apache.commons.commons-lang3-3.14.0.jar
+    │   │       ├── org.apache.kafka.connect-api-3.7.0.jar
+    │   │       ├── org.apache.kafka.connect-json-3.7.0.jar
+    │   │       ├── org.apache.kafka.connect-runtime-3.7.1.jar
+    │   │       ├── org.apache.kafka.kafka-clients-3.7.1.jar
+    │   │       ├── org.eclipse.angus.angus-activation-2.0.2.jar
+    │   │       ├── org.eclipse.microprofile.config.microprofile-config-api-3.1.jar
+    │   │       ├── org.eclipse.microprofile.context-propagation.microprofile-context-propagation-api-1.3.jar
+    │   │       ├── org.eclipse.microprofile.openapi.microprofile-openapi-api-3.1.1.jar
+    │   │       ├── org.eclipse.microprofile.reactive-streams-operators.microprofile-reactive-streams-operators-api-3.0.jar
+    │   │       ├── org.eclipse.microprofile.rest.client.microprofile-rest-client-api-3.0.1.jar
+    │   │       ├── org.eclipse.parsson.parsson-1.1.7.jar
+    │   │       ├── org.glassfish.jaxb.jaxb-core-4.0.5.jar
+    │   │       ├── org.glassfish.jaxb.jaxb-runtime-4.0.5.jar
+    │   │       ├── org.glassfish.jaxb.txw2-4.0.5.jar
+    │   │       ├── org.hibernate.common.hibernate-commons-annotations-7.0.1.Final.jar
+    │   │       ├── org.hibernate.orm.hibernate-core-6.6.0.Final.jar
+    │   │       ├── org.hibernate.orm.hibernate-graalvm-6.6.0.Final.jar
+    │   │       ├── org.hibernate.quarkus-local-cache-0.3.0.jar
+    │   │       ├── org.javassist.javassist-3.30.2-GA.jar
+    │   │       ├── org.jboss.invocation.jboss-invocation-2.0.0.Final.jar
+    │   │       ├── org.jboss.jboss-transaction-spi-8.0.0.Final.jar
+    │   │       ├── org.jboss.logging.commons-logging-jboss-logging-1.0.0.Final.jar
+    │   │       ├── org.jboss.logging.jboss-logging-annotations-3.0.1.Final.jar
+    │   │       ├── org.jboss.narayana.jta.narayana-jta-7.0.2.Final.jar
+    │   │       ├── org.jboss.narayana.jts.narayana-jts-integration-7.0.2.Final.jar
+    │   │       ├── org.jboss.slf4j.slf4j-jboss-logmanager-2.0.0.Final.jar
+    │   │       ├── org.jboss.threads.jboss-threads-3.6.1.Final.jar
+    │   │       ├── org.jctools.jctools-core-4.0.5.jar
+    │   │       ├── org.lz4.lz4-java-1.8.0.jar
+    │   │       ├── org.mariadb.jdbc.mariadb-java-client-3.4.1.jar
+    │   │       ├── org.reactivestreams.reactive-streams-1.0.4.jar
+    │   │       ├── org.slf4j.slf4j-api-2.0.6.jar
+    │   │       ├── org.wildfly.common.wildfly-common-1.7.0.Final.jar
+    │   │       ├── org.xerial.snappy.snappy-java-1.1.10.5.jar
+    │   │       └── org.yaml.snakeyaml-2.2.jar
+    │   ├── quarkus
+    │   │   ├── generated-bytecode.jar
+    │   │   ├── quarkus-application.dat
+    │   │   └── transformed-bytecode.jar
+    │   ├── quarkus-app-dependencies.txt
+    │   └── quarkus-run.jar
+    ├── quarkus-artifact.properties
+    ├── surefire-reports
+    │   ├── TEST-org.acme.GreetingResourceTest.xml
+    │   └── org.acme.GreetingResourceTest.txt
+    └── test-classes
+        └── org
+            └── acme
+                ├── GreetingResourceIT.class
+                └── GreetingResourceTest.class
+
+61 directories, 278 files

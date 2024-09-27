@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: usermanagement-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - usermanagement-network
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    ports:
+      - "${JAEGER_UI_PORT}:16686"
+      - "${JAEGER_ENDPOINT_PORT}:14268"
+    networks:
+      - usermanagement-network
+
+networks:
+  usermanagement-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
